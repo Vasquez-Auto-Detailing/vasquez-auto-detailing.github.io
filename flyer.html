@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vasquez Auto Detailing mobile service menu, pricing, and contact information.">
+    <meta name="theme-color" content="#0d1b38">
+    <title>Vasquez Auto Detailing | Service Flyer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #0d1b38;
+        --blue: #1648b7;
+        --blue-bright: #3476f6;
+        --ink: #17233a;
+        --muted: #60708a;
+        --line: #dce4f0;
+        --paper: #fff;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #e9edf3; color: var(--ink); font-family: "DM Sans", Arial, sans-serif; }
+      .toolbar { display: flex; justify-content: center; padding: 18px; }
+      .print-button { padding: 12px 20px; border: 0; border-radius: 4px; background: var(--blue); color: white; font: 700 14px "DM Sans", Arial, sans-serif; cursor: pointer; }
+      .flyer { width: min(850px, 100%); min-height: 1100px; margin: 0 auto 32px; overflow: hidden; background: var(--paper); box-shadow: 0 16px 50px #0d1b3826; }
+      .masthead { display: flex; align-items: center; gap: 18px; min-height: 148px; padding: 22px 42px; background: var(--navy); color: white; }
+      .logo { width: 98px; height: 98px; flex: 0 0 auto; border: 3px solid white; border-radius: 50%; background: white; object-fit: cover; }
+      .brand-kicker { margin: 0 0 2px; color: #a9c5ff; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
+      .brand-name { margin: 0; font: 800 49px/.9 "Barlow Condensed", Impact, sans-serif; letter-spacing: .5px; }
+      .brand-service { margin: 5px 0 0; color: #fff; font-size: 13px; font-weight: 800; letter-spacing: 4px; }
+      .since { margin: 9px 0 0; color: #c2cde1; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+      .hero { position: relative; height: 285px; overflow: hidden; background: #142442; }
+      .hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+      .hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, #09152bea 0%, #09152bb5 43%, #09152b12 100%); content: ""; }
+      .hero-copy { position: absolute; z-index: 1; top: 33px; left: 42px; max-width: 460px; color: white; }
+      .eyebrow { margin: 0 0 10px; color: #b9d0ff; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
+      .hero h1 { margin: 0; font: 800 54px/.91 "Barlow Condensed", Impact, sans-serif; letter-spacing: .4px; }
+      .hero h1 span { color: #77a5ff; }
+      .hero-copy p:last-child { max-width: 370px; margin: 11px 0 0; color: #f2f5fc; font-size: 13px; line-height: 1.55; }
+      .mobile-ribbon { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 42px; background: var(--blue); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; }
+      .section { padding: 22px 42px 0; }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+      .section-heading h2 { margin: 0; color: var(--navy); font: 800 29px/1 "Barlow Condensed", Impact, sans-serif; letter-spacing: .4px; }
+      .section-heading p { max-width: 275px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.45; text-align: right; }
+      .packages { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .package { position: relative; min-height: 112px; padding: 12px 15px; border: 1px solid var(--line); border-left: 4px solid var(--blue); background: #fff; }
+      .package.featured { border-color: #b5caff; border-left-color: #f1b838; background: #f4f7ff; }
+      .package h3 { max-width: 75%; margin: 0; color: var(--navy); font-size: 13px; font-weight: 800; line-height: 1.2; }
+      .package .price { position: absolute; top: 10px; right: 13px; color: var(--blue); font: 800 25px/1 "Barlow Condensed", Impact, sans-serif; }
+      .package p { max-width: 80%; margin: 6px 0 0; color: var(--muted); font-size: 9px; line-height: 1.45; }
+      .package .tag { display: block; margin: 0 0 4px; color: var(--blue); font-size: 8px; font-weight: 800; letter-spacing: 1px; }
+      .extras { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 11px; padding: 9px 12px; background: #f2f5fa; color: var(--ink); font-size: 9px; }
+      .extras strong { color: var(--navy); font-size: 9px; }
+      .fine-print { margin: 7px 0 0; color: var(--muted); font-size: 8px; line-height: 1.4; }
+      .bottom { display: grid; grid-template-columns: 1.25fr .75fr; gap: 20px; margin: 22px 42px 0; padding: 18px 20px; background: var(--navy); color: white; }
+      .bottom h2 { margin: 0 0 7px; color: #fff; font: 800 27px/1 "Barlow Condensed", Impact, sans-serif; }
+      .bottom p { margin: 0; color: #cbd5e6; font-size: 9px; line-height: 1.55; }
+      .contact-line { display: block; margin-top: 9px; color: white; font-size: 17px; font-weight: 800; text-decoration: none; }
+      .instagram { display: block; margin-top: 4px; color: #b9d0ff; font-size: 10px; font-weight: 700; text-decoration: none; }
+      .areas { margin-top: 9px !important; color: #cbd5e6 !important; }
+      .qr-panel { display: flex; align-items: center; gap: 10px; padding: 10px; background: white; color: var(--navy); }
+      .qr-panel img { display: block; width: 104px; height: 104px; flex: 0 0 auto; }
+      .qr-copy { font-size: 9px; font-weight: 800; line-height: 1.4; }
+      .qr-copy span { display: block; margin-top: 6px; color: var(--blue); font-size: 8px; font-weight: 600; overflow-wrap: anywhere; }
+      .footer-note { padding: 12px 42px 16px; color: var(--muted); font-size: 8px; line-height: 1.5; text-align: center; }
+      @media (max-width: 600px) {
+        .flyer { min-height: 0; margin-bottom: 0; }
+        .masthead { min-height: 116px; padding: 18px 20px; }
+        .logo { width: 76px; height: 76px; }
+        .brand-name { font-size: 38px; }
+        .brand-service { font-size: 10px; letter-spacing: 3px; }
+        .hero { height: 250px; }
+        .hero-copy { top: 28px; left: 22px; }
+        .hero h1 { font-size: 46px; }
+        .mobile-ribbon { align-items: flex-start; flex-direction: column; padding: 11px 22px; gap: 5px; }
+        .section { padding: 20px 20px 0; }
+        .section-heading { align-items: flex-start; flex-direction: column; }
+        .section-heading p { text-align: left; }
+        .packages { grid-template-columns: 1fr; }
+        .bottom { grid-template-columns: 1fr; margin: 20px 20px 0; }
+        .qr-panel { justify-content: flex-start; }
+        .footer-note { padding-right: 20px; padding-left: 20px; }
+      }
+      @page { size: letter portrait; margin: 0; }
+      @media print {
+        body { background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        .toolbar { display: none; }
+        .flyer { width: 8.5in; min-height: 11in; margin: 0; box-shadow: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button class="print-button" type="button" onclick="window.print()">Print / Save Flyer as PDF</button>
+    </div>
+    <main class="flyer">
+      <header class="masthead">
+        <img class="logo" src="assets/logo-mark.webp" alt="Vasquez Auto Detailing original shield logo">
+        <div>
+          <p class="brand-kicker">FONTANA, CALIFORNIA · EST. 2021</p>
+          <p class="brand-name">VASQUEZ</p>
+          <p class="brand-service">AUTO DETAILING</p>
+          <p class="since">PROFESSIONAL MOBILE DETAILING</p>
+        </div>
+      </header>
+      <section class="hero" aria-label="Automotive detailing">
+        <img src="assets/photos/07.webp" alt="Red sports car with its raised door open">
+        <div class="hero-copy">
+          <p class="eyebrow">WE BRING THE DETAIL TO YOU</p>
+          <h1>YOUR DRIVEWAY.<br><span>OUR DETAIL BAY.</span></h1>
+          <p>Professional inside-and-out care at your home or workplace. Tell us what you drive and get a free estimate.</p>
+        </div>
+      </section>
+      <div class="mobile-ribbon">
+        <span>MOBILE DETAILING · WE COME TO YOU</span>
+        <span>FONTANA · INLAND EMPIRE · LOS ANGELES · ORANGE COUNTY</span>
+      </div>
+      <section class="section" aria-labelledby="services-heading">
+        <div class="section-heading">
+          <h2 id="services-heading">CHOOSE YOUR DETAIL</h2>
+          <p>Real packages. Clear starting prices. Service is tailored to your vehicle.</p>
+        </div>
+        <div class="packages">
+          <article class="package">
+            <h3>Entry Level Detail</h3>
+            <span class="price">$65–95</span>
+            <p>Inside-and-out refresh: vacuum, interior wipe-down, foam hand wash, windows, wheels and door jambs. Price varies by vehicle.</p>
+          </article>
+          <article class="package">
+            <h3>Clay Bar &amp; Paint Seal</h3>
+            <span class="price">$179+</span>
+            <p>Foam hand wash, clay bar treatment and paint seal protection, plus interior vacuum and wipe-down.</p>
+          </article>
+          <article class="package">
+            <h3>Interior Shampoo &amp; Extraction</h3>
+            <span class="price">$249+</span>
+            <p>Deep carpet shampoo, seat extraction, stain treatment and odor reduction.</p>
+          </article>
+          <article class="package featured">
+            <span class="tag">THE COMPLETE PACKAGE</span>
+            <h3>Full Detail</h3>
+            <span class="price">$350</span>
+            <p>Paint care and interior extraction together with complete inside-and-out detailing.</p>
+          </article>
+        </div>
+        <div class="extras">
+          <strong>OPTIONAL ADD-ONS</strong>
+          <span>Pet hair +$25</span>
+          <span>Leather conditioner +$25</span>
+          <span>Engine bay +$30</span>
+          <span>Headlights +$75</span>
+        </div>
+        <p class="fine-print">Prices may vary with vehicle size and condition. Excessive dirt, stains, pet hair or extra labor may affect the final estimate. Ask us to confirm package details and availability. Free estimates.</p>
+      </section>
+      <footer class="bottom">
+        <div>
+          <h2>LET’S GET YOUR RIDE RIGHT.</h2>
+          <p>Call or text for a free estimate and to confirm mobile service availability.</p>
+          <a class="contact-line" href="tel:+19093289499">(909) 328-9499</a>
+          <a class="instagram" href="https://www.instagram.com/vasquez.auto.detailing/">@vasquez.auto.detailing</a>
+          <p class="areas">Based in Fontana · Serving the Inland Empire, Los Angeles &amp; Orange County</p>
+        </div>
+        <div class="qr-panel">
+          <img src="assets/website-qr.svg" alt="QR code linking to the Vasquez Auto Detailing website">
+          <div class="qr-copy">SCAN TO VIEW SERVICES &amp; REQUEST AN ESTIMATE<span>vasquez-auto-detailing.github.io</span></div>
+        </div>
+      </footer>
+      <p class="footer-note">Scan for the complete service menu, real work photos and videos, and estimate information.</p>
+    </main>
+  </body>
+</html>
